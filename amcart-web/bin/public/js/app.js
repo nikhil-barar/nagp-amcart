@@ -46,19 +46,19 @@
 				}
 			})
 			.state('shipwrecks',{
-	        url:'/shipwrecks',
+	        url:'/users',
 	        templateUrl: viewsPrefix + 'shipwrecks.html',
 	        controller:'ShipwreckListController'
 	    }).state('viewShipwreck',{
-	       url:'/shipwrecks/:id/view',
+	       url:'/users/:id/view',
 	       templateUrl: viewsPrefix + 'shipwreck-view.html',
 	       controller:'ShipwreckViewController'
 	    }).state('newShipwreck',{
-	        url:'/shipwrecks/new',
+	        url:'/users/new',
 	        templateUrl: viewsPrefix + 'shipwreck-add.html',
 	        controller:'ShipwreckCreateController'
 	    }).state('editShipwreck',{
-	        url:'/shipwrecks/:id/edit',
+	        url:'/users/:id/edit',
 	        templateUrl: viewsPrefix + 'shipwreck-edit.html',
 	        controller:'ShipwreckEditController'
 	    })
