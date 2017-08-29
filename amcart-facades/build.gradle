@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin : 'eclipse'
+
+description = "amcart services"
+
+sourceSets {
+	main{
+        java {
+            srcDir 'src'
+       }
+    }
+}
+
+repositories {
+		mavenCentral()
+}
+
+dependencies {
+	compile group: 'org.springframework', name: 'spring-beans', version: '4.2.4.RELEASE'
+	compile group: 'org.springframework', name: 'spring-context', version: '4.2.4.RELEASE'
+	compile project(path: ':amcart-models')
+	compile project(path: ':amcart-services')
+}

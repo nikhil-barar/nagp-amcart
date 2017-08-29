@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin : 'eclipse'
+apply plugin : 'application'
+apply plugin: 'war'
+
+description = "employee contact app"
+
+sourceSets {
+	main{
+        java {
+            srcDir 'src'
+	       }
+	    resources {
+            srcDir 'resources'
+	       }
+    }
+}
+
+repositories {
+		mavenCentral()
+}
+
+dependencies {
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version:'1.3.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.3.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'1.3.1.RELEASE'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.6'
+    compile group: 'com.h2database', name: 'h2', version:'1.4.190'
+    compile group: 'org.flywaydb', name: 'flyway-core', version:'3.2.1'
+    runtime project(":amcart-models")
+    runtime project(":amcart-daos")
+    runtime project(":amcart-services")
+    runtime project(":amcart-facades")
+    runtime project(":amcart-web")
+}
+
+mainClassName = 'com.nagarro.amcart.App'

@@ -1,0 +1,10 @@
+include ':amcart-models'
+include ':amcart-daos'
+include ':amcart-services'
+include ':amcart-facades'
+include ':amcart-web'
+project(':amcart-models').projectDir = new File('../amcart-models')
+project(':amcart-daos').projectDir = new File('../amcart-daos')
+project(':amcart-services').projectDir = new File('../amcart-services')
+project(':amcart-facades').projectDir = new File('../amcart-facades')
+project(':amcart-web').projectDir = new File('../amcart-web')
