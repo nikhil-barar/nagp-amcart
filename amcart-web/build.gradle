@@ -26,4 +26,5 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
 	compile project(path: ':amcart-models')
 	compile project(path: ':amcart-facades')
+	compile project(path: ':amcart-platform')
 }

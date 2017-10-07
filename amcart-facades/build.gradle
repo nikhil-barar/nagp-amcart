@@ -20,4 +20,5 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-context', version: '4.2.4.RELEASE'
 	compile project(path: ':amcart-models')
 	compile project(path: ':amcart-services')
+	compile project(path: ':amcart-platform')
 }

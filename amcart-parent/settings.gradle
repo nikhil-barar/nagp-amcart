@@ -3,8 +3,10 @@ include ':amcart-daos'
 include ':amcart-services'
 include ':amcart-facades'
 include ':amcart-web'
+include ':amcart-platform'
 project(':amcart-models').projectDir = new File('../amcart-models')
 project(':amcart-daos').projectDir = new File('../amcart-daos')
 project(':amcart-services').projectDir = new File('../amcart-services')
 project(':amcart-facades').projectDir = new File('../amcart-facades')
 project(':amcart-web').projectDir = new File('../amcart-web')
+project(':amcart-platform').projectDir = new File('../amcart-platform')
