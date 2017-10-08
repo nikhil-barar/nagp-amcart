@@ -1,0 +1,91 @@
+package com.nagarro.amcart.models.product;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "categories")
+public class Category {
+
+	@Id
+	private String code;
+
+	private String name;
+
+	private String description;
+
+	private Set<Product> products;
+
+	public Category(String code, String name, String description, Set<Product> products) {
+		super();
+		this.code = code;
+		this.name = name;
+		this.description = description;
+		this.products = products;
+	}
+
+	/**
+	 * @return the code
+	 */
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * @param code
+	 *            the code to set
+	 */
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description
+	 *            the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	 * @return the products
+	 */
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	/**
+	 * @param products
+	 *            the products to set
+	 */
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+
+}
