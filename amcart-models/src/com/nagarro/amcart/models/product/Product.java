@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.data.elasticsearch.annotations.Document;
+
 import com.nagarro.amcart.models.enums.ProductStatus;
 
 /**
@@ -17,10 +19,11 @@ import com.nagarro.amcart.models.enums.ProductStatus;
  */
 @Entity
 @Table(name = "products")
+@Document(indexName="amcart_product")
 public class Product {
 
 	@Id
-	private String code;
+	private String id;
 
 	private String name;
 
@@ -51,10 +54,10 @@ public class Product {
 	 * Parameterized Constructor
 	 */
 
-	public Product(String code, String name, String description, Collection<Media> media, Stock stock, Price price,
+	public Product(String id, String name, String description, Collection<Media> media, Stock stock, Price price,
 			ProductStatus status) {
 		super();
-		this.code = code;
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.media = media;
@@ -67,14 +70,14 @@ public class Product {
 	 * Gets the code
 	 */
 	public String getCode() {
-		return this.code;
+		return this.id;
 	}
 
 	/**
 	 * Sets the code
 	 */
 	public void setCode(String value) {
-		this.code = value;
+		this.id = value;
 	}
 
 	/**
