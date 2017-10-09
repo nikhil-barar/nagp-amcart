@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<table width = "99%">
+	<tr>
+		<td>
+			${name}
+		</td>
+		<td>
+			${company}
+		</td>
+	</tr>
+	</table>
+</body>
+</html>
