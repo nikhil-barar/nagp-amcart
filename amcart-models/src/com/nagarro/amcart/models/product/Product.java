@@ -1,13 +1,10 @@
 package com.nagarro.amcart.models.product;
 
 import java.util.Collection;
-import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -29,12 +26,16 @@ public class Product {
 
 	private String description;
 
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = false)
 	private Collection<Media> media;
 
-	private Set<Category> categories;
+	@ManyToMany(mappedBy = "products")
+	private Collection<Category> categories;
 
+	@OneToOne(cascade = CascadeType.ALL)
 	private Stock stock;
 
+	@OneToOne(cascade = CascadeType.ALL)
 	private Price price;
 
 	private ProductStatus status;
@@ -162,15 +163,15 @@ public class Product {
 
 	/**
 	 * @return the categories
-	 */
-	public Set<Category> getCategories() {
+	 */	
+	public Collection<Category> getCategories() {
 		return categories;
 	}
 
 	/**
 	 * @param categories the categories to set
 	 */
-	public void setCategories(Set<Category> categories) {
+	public void setCategories(Collection<Category> categories) {
 		this.categories = categories;
 	}
 

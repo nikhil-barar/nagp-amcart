@@ -1,10 +1,13 @@
 package com.nagarro.amcart.models.product;
 
-import java.util.Set;
+import java.util.Collection;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,9 +21,11 @@ public class Category {
 
 	private String description;
 
-	private Set<Product> products;
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Product.class)
+    @JoinTable(name = "cat2productrel")
+	private Collection<Product> products;
 
-	public Category(String code, String name, String description, Set<Product> products) {
+	public Category(String code, String name, String description, Collection<Product> products) {
 		super();
 		this.code = code;
 		this.name = name;
@@ -76,7 +81,7 @@ public class Category {
 	/**
 	 * @return the products
 	 */
-	public Set<Product> getProducts() {
+	public Collection<Product> getProducts() {
 		return products;
 	}
 
@@ -84,7 +89,7 @@ public class Category {
 	 * @param products
 	 *            the products to set
 	 */
-	public void setProducts(Set<Product> products) {
+	public void setProducts(Collection<Product> products) {
 		this.products = products;
 	}
 
