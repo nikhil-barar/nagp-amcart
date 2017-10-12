@@ -1,13 +1,22 @@
 apply plugin: 'java'
 apply plugin : 'eclipse'
 
-description = "amcart services"
+description = "amcart facades"
 
 sourceSets {
 	main{
         java {
             srcDir 'src'
        }
+        resources {
+            srcDir 'resources'
+	    }
+    }
+    
+    test{
+    	java{
+    		srcDirs 'test'
+    	}
     }
 }
 

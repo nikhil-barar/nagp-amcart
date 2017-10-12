@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nagarro.amcart.facade.UserFacade;
+import com.nagarro.amcart.facade.user.data.UserData;
 import com.nagarro.amcart.models.User;
 
 
@@ -22,7 +23,7 @@ public class UserController {
 	private UserFacade userFacade;
 
 	@RequestMapping(value = "users", method = RequestMethod.GET)
-	public List<User> list() {
+	public List<UserData> list() {
  		return userFacade.list();
 	}
 
