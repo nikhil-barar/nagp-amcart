@@ -1,8 +1,6 @@
 package com.nagarro.amcart.platform.converters.impl;
 
 import org.apache.commons.lang.NotImplementedException;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.beans.factory.InitializingBean;
 
 import com.nagarro.amcart.platform.converters.Converter;
 import com.nagarro.amcart.platform.converters.Populator;
@@ -13,7 +11,7 @@ import com.nagarro.amcart.platform.exceptions.ConversionException;
  * base type can be used as a converter.
  */
 public abstract class AbstractConverter<SOURCE, TARGET>
-		implements Converter<SOURCE, TARGET>, Populator<SOURCE, TARGET>, InitializingBean, BeanNameAware {
+		implements Converter<SOURCE, TARGET>, Populator<SOURCE, TARGET> {
 	private Class<TARGET> targetClass;
 
 	@Override
@@ -57,13 +55,5 @@ public abstract class AbstractConverter<SOURCE, TARGET>
 
 	protected TARGET throwException() {
 		throw new NotImplementedException();
-	}
-
-	@Override
-	public void setBeanName(final String name) {
-	}
-
-	@Override
-	public void afterPropertiesSet() throws Exception {
 	}
 }
