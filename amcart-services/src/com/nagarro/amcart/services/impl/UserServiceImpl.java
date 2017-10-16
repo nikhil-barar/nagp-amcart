@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.findAll();
 	}
 
+	@Override
+	public User getUser(final String userName, final char[] password) {
+		return null;
+	}
+
 }

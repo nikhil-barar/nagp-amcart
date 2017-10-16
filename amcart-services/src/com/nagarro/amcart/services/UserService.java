@@ -14,4 +14,6 @@ public interface UserService {
 
 	public List<User> list();
 
+	User getUser(String userName, char[] password);
+
 }
