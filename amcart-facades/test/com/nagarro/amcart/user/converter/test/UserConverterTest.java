@@ -16,7 +16,7 @@ public class UserConverterTest {
 	private Converter<User, UserData> userConverter;
 	
 	@Test
-	public void testEmailService(){
+	public void testUserConverter(){
 		User user = new User();
 		user.setId(1L);
 		user.setName("Amcart");
