@@ -56,7 +56,6 @@ public class Address {
 
 	/** The country. */
 	@ManyToOne
-	@Column(name = "country")
 	private Country country;
 
 	/** The company. */
@@ -64,7 +63,6 @@ public class Address {
 	private String company;
 
 	@ManyToOne
-	@Column(name = "user")
 	private User user;
 
 	/**

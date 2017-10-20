@@ -40,7 +40,6 @@ public class User {
 	private char[] password;
 
 	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	@Column(name = "default_address")
 	private Address defaultAddress;
 
 	@Enumerated(EnumType.STRING)
@@ -50,7 +49,7 @@ public class User {
 	@Column(name = "date_of_birth")
 	private Date dateOfBirth;
 
-	User() {
+	public User() {
 
 	}
 
