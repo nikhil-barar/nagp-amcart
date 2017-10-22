@@ -13,9 +13,9 @@ public class DAOException extends TechnicalException {
 
     private static final long serialVersionUID = 1L;
 
-    public DAOException(String exceptionCode, String className,
+    public DAOException(String className,
             String methodName,Throwable originalException) {
-        super(exceptionCode, className, methodName,originalException);
+        super(className, methodName,originalException);
     }
 
 

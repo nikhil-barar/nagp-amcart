@@ -15,7 +15,7 @@ sourceSets {
     
     test{
     	java{
-    		srcDirs 'test'
+    		srcDirs 'testsrc'
     	}
     }
 }
@@ -31,4 +31,6 @@ dependencies {
 	compile project(path: ':amcart-models')
 	compile project(path: ':amcart-daos')
 	compile project(path: ':amcart-platform')
+	
+	testCompile project(path: ':amcart-platform')
 }

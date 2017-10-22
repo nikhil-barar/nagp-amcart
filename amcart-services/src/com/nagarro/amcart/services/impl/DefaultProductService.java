@@ -6,13 +6,16 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.nagarro.amcart.daos.ProductDao;
+import com.nagarro.amcart.daos.exceptions.DAOException;
 import com.nagarro.amcart.models.enums.ProductStatus;
 import com.nagarro.amcart.models.product.Category;
 import com.nagarro.amcart.models.product.Product;
 import com.nagarro.amcart.services.ProductService;
+import com.nagarro.amcart.services.exceptions.ModelNotFoundException;
 
 public class DefaultProductService implements ProductService {
 
@@ -21,47 +24,50 @@ public class DefaultProductService implements ProductService {
 
 	@Override
 	public Product findById(Integer id) {
+		Validate.notNull(id, "Parameter id cannot be null!");
 		return productDao.findOne(id);
 	}
 
 	@Override
-	public List<Product> findByName(String name) {
-		List<Product> productList = new ArrayList<>();
-		Collection<Product> result = productDao.findByName(name);
-		if (CollectionUtils.isNotEmpty(result)) {
-			productList.addAll(result);
+	public List<Product> findByName(String name) throws ModelNotFoundException {
+		Validate.notNull(name, "Parameter name cannot be null!");
+		try {
+			return new ArrayList<>(productDao.findByName(name));
+		} catch (DAOException e) {
+			throw new ModelNotFoundException(this.getClass().getName(), "findByName", e);
 		}
-		return productList;
 	}
 
 	@Override
-	public List<Product> findByStatus(ProductStatus status) {
-		List<Product> productList = new ArrayList<>();
-		Collection<Product> result = productDao.findByStatus(status);
-		if (CollectionUtils.isNotEmpty(result)) {
-			productList.addAll(result);
+	public List<Product> findByStatus(ProductStatus status) throws ModelNotFoundException {
+		Validate.notNull(status, "Parameter status cannot be null!");
+		try {
+			return new ArrayList<>(productDao.findByStatus(status));
+		} catch (DAOException e) {
+			throw new ModelNotFoundException(this.getClass().getName(), "findByStatus", e);
 		}
-		return productList;
 	}
 
 	@Override
-	public List<Product> findByCategories(Set<Category> categories) {
-		List<Product> productList = new ArrayList<>();
-		Collection<Product> result = productDao.findByCategories(categories);
-		if (CollectionUtils.isNotEmpty(result)) {
-			productList.addAll(result);
+	public List<Product> findByCategories(Set<Category> categories) throws ModelNotFoundException {
+		Validate.notNull(categories, "Parameter Categries cannot be null!");
+		try {
+			return new ArrayList<>(productDao.findByCategories(categories));
+		} catch (DAOException e) {
+			throw new ModelNotFoundException(this.getClass().getName(), "findByCategories", e);
 		}
-		return productList;
 	}
 
 	@Override
-	public List<Product> findByCategoriesAndStatus(Set<Category> categories, ProductStatus status) {
-		List<Product> productList = new ArrayList<>();
-		Collection<Product> result = productDao.findByCategoriesAndStatus(categories, status);
-		if (CollectionUtils.isNotEmpty(result)) {
-			productList.addAll(result);
+	public List<Product> findByCategoriesAndStatus(Set<Category> categories, ProductStatus status)
+			throws ModelNotFoundException {
+		try {
+			Validate.notNull(categories, "Parameter Categries cannot be null!");
+			Validate.notNull(status, "Parameter status cannot be null!");
+			return new ArrayList<>(productDao.findByCategoriesAndStatus(categories, status));
+		} catch (DAOException exception) {
+			throw new ModelNotFoundException(this.getClass().getName(), "findByCategoriesAndStatus", exception);
 		}
-		return productList;
 	}
 
 	@Override

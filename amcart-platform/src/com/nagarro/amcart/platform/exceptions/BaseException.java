@@ -11,9 +11,8 @@ public abstract class BaseException extends Exception {
 	private static final Object SEPARATOR = "|";
 	
 
-	public BaseException(String exceptionCode, String className, String methodName, Throwable originalException) {
+	public BaseException(String className, String methodName, Throwable originalException) {
 		StringBuilder errorBuilder=new StringBuilder();
-		errorBuilder.append("EXCEPTION CODE: ").append(exceptionCode).append(SEPARATOR);
 		errorBuilder.append("EXCEPTION IN CLASS: ").append(className).append(SEPARATOR);
 		errorBuilder.append("EXPCEPTION IN METHOD: ").append(methodName).append(SEPARATOR);
 		errorBuilder.append("ORIGINAL EXPCEPTION : ").append(originalException.getLocalizedMessage());

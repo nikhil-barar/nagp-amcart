@@ -6,6 +6,7 @@ import java.util.Set;
 import com.nagarro.amcart.models.enums.ProductStatus;
 import com.nagarro.amcart.models.product.Category;
 import com.nagarro.amcart.models.product.Product;
+import com.nagarro.amcart.services.exceptions.ModelNotFoundException;
 
 public interface ProductService {
 
@@ -15,6 +16,7 @@ public interface ProductService {
 	 * 
 	 * @param name
 	 * @return Product
+	 * @throws ModelNotFoundException 
 	 */
 	Product findById(Integer id);
 	
@@ -23,6 +25,7 @@ public interface ProductService {
 	 * 
 	 * @param name
 	 * @return Product
+	 * @throws ModelNotFoundException 
 	 */
 	List<Product> findAllProducts();
 
@@ -31,24 +34,27 @@ public interface ProductService {
 	 * 
 	 * @param name
 	 * @return List of Products
+	 * @throws ModelNotFoundException 
 	 */
-	List<Product> findByName(String name);
+	List<Product> findByName(String name) throws ModelNotFoundException;
 
 	/**
 	 * finds products using productStatus
 	 * 
 	 * @param ProductStatus
 	 * @return List of Products
+	 * @throws ModelNotFoundException
 	 */
-	List<Product> findByStatus(ProductStatus status);
+	List<Product> findByStatus(ProductStatus status) throws ModelNotFoundException;
 
 	/**
 	 * finds products using categories and productStatus
 	 * 
 	 * @param Category
 	 * @return List of Products
+	 * @throws ModelNotFoundException 
 	 */
-	List<Product> findByCategories(Set<Category> categories);
+	List<Product> findByCategories(Set<Category> categories) throws ModelNotFoundException;
 
 	/**
 	 * finds products using categories and productStatus
@@ -56,7 +62,8 @@ public interface ProductService {
 	 * @param Category
 	 * @param ProductStatus
 	 * @return List of Products
+	 * @throws ModelNotFoundException 
 	 */
-	List<Product> findByCategoriesAndStatus(Set<Category> categories, ProductStatus status);
+	List<Product> findByCategoriesAndStatus(Set<Category> categories, ProductStatus status) throws ModelNotFoundException;
 
 }
