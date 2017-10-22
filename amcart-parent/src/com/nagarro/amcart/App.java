@@ -14,14 +14,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages="com.nagarro.amcart.daos")
 @EntityScan
 @ImportResource({"classpath:platform-config.xml", "classpath:facades-config.xml"})
-public class App 
+public class App 											//NOSONAR
 {
-	private App() {
-	    throw new IllegalAccessError("Application class");
-	  }
-
     public static void main( String[] args )
     {
-    	SpringApplication.run(App.class, args);		//NOSONAR
+    	SpringApplication.run(App.class, args);				//NOSONAR
     }
 }
