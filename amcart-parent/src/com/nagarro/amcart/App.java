@@ -16,8 +16,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ImportResource({"classpath:platform-config.xml", "classpath:facades-config.xml"})
 public class App 
 {
+	private App() {
+	    throw new IllegalAccessError("Application class");
+	  }
+
     public static void main( String[] args )
     {
-        SpringApplication.run(App.class, args);
+    	SpringApplication.run(App.class, args);		//NOSONAR
     }
 }

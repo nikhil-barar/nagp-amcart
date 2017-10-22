@@ -39,7 +39,7 @@ public class UserFacadeImpl implements UserFacade {
 	@Override
 	public List<UserData> list() {
 		List<User> users = userService.list();
-		List<UserData> convertedUsers = new ArrayList<UserData>();
+		List<UserData> convertedUsers = new ArrayList<>();
 		for (User user: users) {
 			convertedUsers.add(userConverter.convert(user));
 		}

@@ -50,7 +50,7 @@ public class User {
 	private Date dateOfBirth;
 
 	public User() {
-
+		//default Constructor
 	}
 
 	public Long getId() {
