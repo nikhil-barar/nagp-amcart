@@ -7,7 +7,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 
 import com.nagarro.amcart.models.Address;
@@ -16,12 +19,13 @@ import com.nagarro.amcart.models.enums.OrderStatus;
 import com.nagarro.amcart.models.enums.PaymentMethod;
 import com.nagarro.amcart.models.product.Price;
 
-
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class AbstractOrder {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long orderID;
+	private String orderId;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Price totalPrice;
@@ -46,17 +50,19 @@ public class AbstractOrder {
 	private Date modifiedTime;
 	private Date deliveryDate;
 	private OrderStatus status;
+	
+	
 	/**
-	 * @return the orderID
+	 * @return the orderId
 	 */
-	public String getOrderID() {
-		return orderID;
+	public String getOrderId() {
+		return orderId;
 	}
 	/**
-	 * @param orderID the orderID to set
+	 * @param orderId the orderId to set
 	 */
-	public void setOrderID(String orderID) {
-		this.orderID = orderID;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 	/**
 	 * @return the totalPrice

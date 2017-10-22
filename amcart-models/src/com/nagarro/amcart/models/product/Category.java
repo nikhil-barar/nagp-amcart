@@ -2,27 +2,23 @@ package com.nagarro.amcart.models.product;
 
 import java.util.Collection;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.nagarro.amcart.models.AbstractEntity;
+
 @Entity
 @Table(name = "categories")
-public class Category {
+public class Category extends AbstractEntity {
 
-	@Id
 	private String code;
 
 	private String name;
 
 	private String description;
 
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Product.class)
-    @JoinTable(name = "cat2productrel")
+	@ManyToMany(mappedBy="categories")
 	private Collection<Product> products;
 
 	public Category(String code, String name, String description, Collection<Product> products) {

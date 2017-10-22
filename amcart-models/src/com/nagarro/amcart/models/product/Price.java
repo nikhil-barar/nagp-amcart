@@ -1,11 +1,9 @@
 package com.nagarro.amcart.models.product;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.nagarro.amcart.models.AbstractEntity;
 import com.nagarro.amcart.models.enums.Currency;
 
 /**
@@ -13,11 +11,7 @@ import com.nagarro.amcart.models.enums.Currency;
  */
 @Entity
 @Table(name = "prices")
-public class Price {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int priceId;
+public class Price extends AbstractEntity{
 
 	private Currency currency;
 
@@ -30,9 +24,8 @@ public class Price {
 		super();
 	}
 
-	public Price(int priceId, Currency currency, Double priceValue) {
+	public Price(Currency currency, Double priceValue) {
 		super();
-		this.priceId = priceId;
 		this.currency = currency;
 		this.priceValue = priceValue;
 	}
@@ -64,13 +57,6 @@ public class Price {
 	 */
 	public void setPriceValue(Double priceValue) {
 		this.priceValue = priceValue;
-	}
-
-	/**
-	 * @return the priceId
-	 */
-	public int getPriceId() {
-		return priceId;
 	}
 
 }

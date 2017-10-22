@@ -1,20 +1,15 @@
 package com.nagarro.amcart.models.product;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.nagarro.amcart.models.AbstractEntity;
 
 @Entity
 @Table(name = "stocks")
-public class Stock {
+public class Stock extends AbstractEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int stockId;
-
-	private Long stockValue;
+	private Long value;
 
 	/**
 	 * Constructor
@@ -23,31 +18,23 @@ public class Stock {
 		super();
 	}
 
-	public Stock(Long stockValue) {
+	public Stock(Long value) {
 		super();
-		this.stockValue = stockValue;
+		this.value = value;
 	}
 
 	/**
-	 * @return the stockId
+	 * @return the value
 	 */
-	public int getStockId() {
-		return stockId;
+	public Long getValue() {
+		return value;
 	}
 
 	/**
-	 * @return the stockValue
+	 * @param value the value to set
 	 */
-	public Long getStockValue() {
-		return stockValue;
-	}
-
-	/**
-	 * @param stockValue
-	 *            the stockValue to set
-	 */
-	public void setStockValue(Long stockValue) {
-		this.stockValue = stockValue;
+	public void setValue(Long value) {
+		this.value = value;
 	}
 
 }

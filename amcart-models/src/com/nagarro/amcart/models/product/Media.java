@@ -1,10 +1,9 @@
 package com.nagarro.amcart.models.product;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.nagarro.amcart.models.AbstractEntity;
 
 
 /**
@@ -12,12 +11,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="medias")
-public class Media {
+public class Media extends AbstractEntity{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String code;
-
 	private String url;
 
 	/**
