@@ -14,7 +14,7 @@ public class UserPopulator implements Populator<User, UserData>
 		Assert.notNull(source, "Parameter source cannot be null.");
 		Assert.notNull(target, "Parameter target cannot be null.");
 
-		target.setId(source.getId().toString());
+		target.setId(source.getId());
 		target.setName(source.getName());
 	}
 }

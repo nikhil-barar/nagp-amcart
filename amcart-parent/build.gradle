@@ -27,8 +27,8 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.6'
     compile group: 'com.h2database', name: 'h2', version:'1.4.190'
     compile group: 'org.flywaydb', name: 'flyway-core', version:'3.2.1'
+    compile project(":amcart-platform")
     runtime project(":amcart-models")
-    runtime project(":amcart-platform")
     runtime project(":amcart-daos")
     runtime project(":amcart-services")
     runtime project(":amcart-facades")

@@ -30,4 +30,6 @@ dependencies {
 	compile project(path: ':amcart-models')
 	compile project(path: ':amcart-services')
 	compile project(path: ':amcart-platform')
+	
+	testCompile group: 'org.springframework', name: 'spring-test', version: '4.2.4.RELEASE'
 }
