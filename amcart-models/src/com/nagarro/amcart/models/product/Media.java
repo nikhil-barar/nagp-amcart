@@ -5,42 +5,41 @@ import javax.persistence.Table;
 
 import com.nagarro.amcart.models.AbstractEntity;
 
-
 /**
  * Class to represent the Media
  */
 @Entity
-@Table(name="medias")
-public class Media extends AbstractEntity{
-	
-	private String url;
+@Table(name = "medias")
+public class Media extends AbstractEntity {
 
-	/**
-	 * Constructor
-	 */
-	public Media() {
-		super();
-	}
+    private String url;
 
-	/**
-	 * Parameterized Constructor
-	 */
-	public Media(String url) {
-		super();
-		this.url = url;
-	}
+    /**
+     * Constructor
+     */
+    public Media() {
+        super();
+    }
 
-	/**
-	 * Gets the url
-	 */
-	public String getUrl() {
-		return this.url;
-	}
+    /**
+     * Parameterized Constructor
+     */
+    public Media(String url) {
+        super();
+        this.url = url;
+    }
 
-	/**
-	 * Sets the url
-	 */
-	public void setUrl(String value) {
-		this.url = value;
-	}
+    /**
+     * Gets the url
+     */
+    public String getUrl() {
+        return this.url;
+    }
+
+    /**
+     * Sets the url
+     */
+    public void setUrl(String value) {
+        this.url = value;
+    }
 }

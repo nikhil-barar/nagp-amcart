@@ -11,13 +11,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *
  */
 @SpringBootApplication
-@EnableJpaRepositories(basePackages="com.nagarro.amcart.daos")
+@EnableJpaRepositories(basePackages = "com.nagarro.amcart.daos")
 @EntityScan
-@ImportResource({"classpath:platform-config.xml", "classpath:facades-config.xml"})
-public class App 											//NOSONAR
+@ImportResource({ "classpath:platform-config.xml", "classpath:facades-config.xml" })
+public class App // NOSONAR
 {
-    public static void main( String[] args )
-    {
-    	SpringApplication.run(App.class, args);				//NOSONAR
+    public static void main(String[] args) {
+        SpringApplication.run(App.class, args); // NOSONAR
     }
 }

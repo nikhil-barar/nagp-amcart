@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nagarro.amcart.facade.UserFacade;
 import com.nagarro.amcart.facade.user.data.UserData;
-import com.nagarro.amcart.models.User;
+import com.nagarro.amcart.models.user.User;
 
 
 @RestController

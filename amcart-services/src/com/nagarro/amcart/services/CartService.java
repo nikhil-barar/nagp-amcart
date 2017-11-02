@@ -1,7 +1,7 @@
 package com.nagarro.amcart.services;
 
-import com.nagarro.amcart.models.User;
 import com.nagarro.amcart.models.order.Cart;
+import com.nagarro.amcart.models.user.User;
 
 public interface CartService {
 

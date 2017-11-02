@@ -13,11 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 
-import com.nagarro.amcart.models.Address;
-import com.nagarro.amcart.models.User;
 import com.nagarro.amcart.models.enums.OrderStatus;
 import com.nagarro.amcart.models.enums.PaymentMethod;
 import com.nagarro.amcart.models.product.Price;
+import com.nagarro.amcart.models.user.Address;
+import com.nagarro.amcart.models.user.User;
 
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)

@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.nagarro.amcart.facade.user.data.UserData;
-import com.nagarro.amcart.models.User;
+import com.nagarro.amcart.models.user.User;
 import com.nagarro.amcart.platform.converters.Converter;
 
 import junit.framework.Assert;
@@ -35,7 +35,7 @@ public class UserConverterTest {
     @Test
     public void testUserConvertBasics() {
         User user = new User();
-        user.setId(1L);
+        user.setId(1);
         user.setName("Amcart");
         UserData convertedUser = userConverter.convert(user);
         Assert.assertEquals(user.getId(), convertedUser.getId());

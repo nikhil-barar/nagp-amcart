@@ -2,7 +2,7 @@ package com.nagarro.amcart.services;
 
 import java.util.List;
 
-import com.nagarro.amcart.models.User;
+import com.nagarro.amcart.models.user.User;
 
 public interface UserService {
 

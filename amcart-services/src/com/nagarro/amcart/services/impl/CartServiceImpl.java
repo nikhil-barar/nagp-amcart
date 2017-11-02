@@ -7,8 +7,8 @@ import org.springframework.util.ObjectUtils;
 
 import com.nagarro.amcart.daos.UserDao;
 import com.nagarro.amcart.daos.order.CartDao;
-import com.nagarro.amcart.models.User;
 import com.nagarro.amcart.models.order.Cart;
+import com.nagarro.amcart.models.user.User;
 import com.nagarro.amcart.services.CartService;
 
 public class CartServiceImpl implements CartService{

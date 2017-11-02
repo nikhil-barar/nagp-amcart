@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nagarro.amcart.daos.UserDao;
-import com.nagarro.amcart.models.User;
+import com.nagarro.amcart.models.user.User;
 import com.nagarro.amcart.services.UserService;
 
 @Service("userService")

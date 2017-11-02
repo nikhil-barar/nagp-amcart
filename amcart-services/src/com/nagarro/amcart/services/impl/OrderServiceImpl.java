@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ObjectUtils;
 
 import com.nagarro.amcart.daos.order.OrderDao;
-import com.nagarro.amcart.models.User;
 import com.nagarro.amcart.models.order.Order;
+import com.nagarro.amcart.models.user.User;
 import com.nagarro.amcart.services.OrderService;
 
 public class OrderServiceImpl implements OrderService {
