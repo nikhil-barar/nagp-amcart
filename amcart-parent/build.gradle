@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin : 'eclipse'
-apply plugin : 'application'
 apply plugin: 'war'
 
 description = "amcart app"
@@ -28,5 +27,3 @@ dependencies {
     runtime project(":amcart-facades")
     runtime project(":amcart-web")
 }
-
-mainClassName = 'com.nagarro.amcart.App'

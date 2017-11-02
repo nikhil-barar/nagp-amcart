@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin : 'eclipse'
 apply plugin: 'war'
+apply plugin : 'application'
 
 description = "amcart web"
 
@@ -19,3 +20,5 @@ dependencies {
 	compile project(path: ':amcart-facades')
 	compile project(path: ':amcart-platform')
 }
+
+mainClassName = 'com.nagarro.amcart.App'
