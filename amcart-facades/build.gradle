@@ -28,6 +28,8 @@ dependencies {
 	compile project(':amcart-models')
 	compile project(':amcart-services')
 	compile project(':amcart-platform')
+	compile project(':amcart-connector')
+
 	
 	testCompile group: 'org.springframework', name: 'spring-test', version: '4.2.4.RELEASE'
 }

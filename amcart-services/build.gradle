@@ -24,7 +24,6 @@ repositories {
 dependencies {
 	compile group: 'org.springframework', name: 'spring-beans', version: '4.2.4.RELEASE'
 	compile group: 'org.springframework', name: 'spring-context', version: '4.2.4.RELEASE'
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'1.3.1.RELEASE'
 	compile project(':amcart-models')
 	compile project(':amcart-daos')
 	compile project(':amcart-platform')

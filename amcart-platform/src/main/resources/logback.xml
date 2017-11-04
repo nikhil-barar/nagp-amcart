@@ -10,8 +10,8 @@
     </encoder>
   </appender>
 
-  <appender name="SAVE-TO-FILE" class="ch.qos.logback.core.FileAppender">
-    <file>${LOG_PATH}/console.log</file>
+  <appender name="SAVE-TO-FILE1" class="ch.qos.logback.core.FileAppender">
+    <file>${LOG_PATH}/console_out.log</file>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
       <Pattern>
         %d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n

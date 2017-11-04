@@ -19,9 +19,9 @@ public class ElasticsearchConfiguration {
 	@Resource
 	private Environment environment;
 
-	@Bean
+	/*@Bean
 	public Client client() {
-		TransportClient client = new TransportClient();
+		TransportClient client = new TransportClient.Builder().build()
 		TransportAddress address = new InetSocketTransportAddress(environment.getProperty("elasticsearch.host"),
 				Integer.parseInt(environment.getProperty("elasticsearch.port")));
 		client.addTransportAddress(address);
@@ -31,5 +31,5 @@ public class ElasticsearchConfiguration {
 	@Bean
 	public ElasticsearchOperations elasticsearchTemplate() {
 		return new ElasticsearchTemplate(client());
-	}
+	}*/
 }
