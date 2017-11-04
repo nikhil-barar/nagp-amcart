@@ -14,7 +14,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
 	compile group: 'javax.servlet.jsp.jstl', name: 'javax.servlet.jsp.jstl-api', version:'1.2.1'
 	compile group: 'taglibs', name: 'standard', version:'1.1.2'
-	//compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '8.0.20'
+	compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '8.5.15'
 	compile group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version:'4.6.1'
 	compile project(':amcart-models')
 	compile project(':amcart-facades')
