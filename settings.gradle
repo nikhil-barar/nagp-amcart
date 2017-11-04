@@ -1,0 +1,10 @@
+include 'amcart-models'
+include 'amcart-daos'
+include 'amcart-services'
+include 'amcart-facades'
+include 'amcart-web'
+include 'amcart-platform'
+include 'amcart-connector'
+
+
+rootProject.name = 'nagp-amcart-root'
