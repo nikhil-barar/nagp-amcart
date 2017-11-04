@@ -11,6 +11,8 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -25,5 +27,11 @@ public abstract class AbstractEntity {
 
 	@UpdateTimestamp
 	protected Date modifiedTime;
+
+	@CreatedBy
+	protected String createdBy;
+
+	@LastModifiedBy
+	protected String lastModifiedBy;
 
 }
