@@ -16,9 +16,9 @@ dependencies {
 	compile group: 'taglibs', name: 'standard', version:'1.1.2'
 	compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '8.0.20'
 	compile group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version:'4.6.1'
-	compile project(path: ':amcart-models')
-	compile project(path: ':amcart-facades')
-	compile project(path: ':amcart-platform')
+	compile project(':amcart-models')
+	compile project(':amcart-facades')
+	compile project(':amcart-platform')
 }
 
 mainClassName = 'com.nagarro.amcart.App'
