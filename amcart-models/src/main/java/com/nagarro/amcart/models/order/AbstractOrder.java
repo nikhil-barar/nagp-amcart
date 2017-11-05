@@ -4,8 +4,6 @@ package com.nagarro.amcart.models.order;
 import java.sql.Date;
 
 import javax.persistence.CascadeType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -24,7 +22,6 @@ import com.nagarro.amcart.models.user.User;
 public class AbstractOrder {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String orderId;
 	
 	@OneToOne(cascade = CascadeType.ALL)

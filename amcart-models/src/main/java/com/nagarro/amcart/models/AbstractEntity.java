@@ -18,20 +18,28 @@ import org.springframework.data.annotation.LastModifiedBy;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class AbstractEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	protected Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    protected Long id;
 
-	@CreationTimestamp
-	protected Date createdTime;
+    @CreationTimestamp
+    protected Date createdTime;
 
-	@UpdateTimestamp
-	protected Date modifiedTime;
+    @UpdateTimestamp
+    protected Date modifiedTime;
 
-	@CreatedBy
-	protected String createdBy;
+    @CreatedBy
+    protected String createdBy;
 
-	@LastModifiedBy
-	protected String lastModifiedBy;
+    @LastModifiedBy
+    protected String lastModifiedBy;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
 }

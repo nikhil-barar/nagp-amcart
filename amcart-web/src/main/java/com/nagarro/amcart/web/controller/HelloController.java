@@ -9,14 +9,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloController {
 
-   @RequestMapping("/")
-   public String index() {
-      return "index";
-   }
+    @RequestMapping("/")
+    public String index() {
+        return "index";
+    }
+    
+    @RequestMapping("/hello")
+    public String hello() {
+        return "index";
+    }
 
-   @RequestMapping(value = "/hello",  method = RequestMethod.POST)
-   public String sayHello(@RequestParam String name, Model model) {
-      model.addAttribute("name", name);
-      return "hello";
-   }
+    @RequestMapping(value = "/hello", method = RequestMethod.POST)
+    public String sayHello(@RequestParam String name, Model model) {
+        model.addAttribute("name", name);
+        return "hello";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
 }

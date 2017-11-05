@@ -11,7 +11,7 @@ import com.nagarro.amcart.models.AbstractEntity;
 import com.nagarro.amcart.models.enums.AddressType;
 
 @Entity
-@Table(name = "addresses")
+@Table(name = "address")
 public class Address extends AbstractEntity {
 
     /** The first name. */

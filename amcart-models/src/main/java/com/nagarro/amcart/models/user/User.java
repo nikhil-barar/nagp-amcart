@@ -2,12 +2,17 @@ package com.nagarro.amcart.models.user;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -32,7 +37,7 @@ public class User extends AbstractEntity {
     private List<Address> listOfAddress;
 
     @Column(name = "password")
-    private char[] password;
+    private String password;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Address defaultAddress;
@@ -44,16 +49,23 @@ public class User extends AbstractEntity {
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = Role.class)
+    @JoinTable(joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
+
     public User() {
-        // default Constructor
+        // Default constructor
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public User(User user) {
+        this.name = user.name;
+        this.emailId = user.emailId;
+        this.mobileNo = user.mobileNo;
+        this.listOfAddress = user.listOfAddress;
+        this.password = user.password;
+        this.defaultAddress = user.defaultAddress;
+        this.gender = user.gender;
+        this.dateOfBirth = user.dateOfBirth;
     }
 
     public String getName() {
@@ -88,11 +100,11 @@ public class User extends AbstractEntity {
         this.listOfAddress = listOfAddress;
     }
 
-    public char[] getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(char[] password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -118,6 +130,14 @@ public class User extends AbstractEntity {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
 }

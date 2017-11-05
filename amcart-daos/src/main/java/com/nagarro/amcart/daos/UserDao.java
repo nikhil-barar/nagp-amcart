@@ -15,4 +15,5 @@ import com.nagarro.amcart.models.user.User;
 @Component("userDao")
 public interface UserDao extends JpaRepository<User, Long> {
 
+    User findByEmailId(String emailId);
 }

@@ -35,7 +35,7 @@ public class UserConverterTest {
     @Test
     public void testUserConvertBasics() {
         User user = new User();
-        user.setId(1);
+        user.setId(1L);
         user.setName("Amcart");
         UserData convertedUser = userConverter.convert(user);
         Assert.assertEquals(user.getId(), convertedUser.getId());
