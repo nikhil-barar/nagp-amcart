@@ -6,8 +6,8 @@
 
 <!-- Static content -->
 <link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="/resources/js/app.js"></script>
-
 <title>Spring Boot</title>
 </head>
 <body>

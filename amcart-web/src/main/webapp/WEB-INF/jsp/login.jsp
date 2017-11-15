@@ -3,10 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
 <!-- Static content -->
-<!-- <link rel="stylesheet" href="/resources/css/style.css"> -->
-
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <title>Spring Boot</title>
 </head>
 <body>
