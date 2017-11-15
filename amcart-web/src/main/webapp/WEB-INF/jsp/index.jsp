@@ -1,17 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@ taglib prefix="template" tagdir="/WEB-INF/tags/template"%>
 
-<!-- Static content -->
-<link rel="stylesheet" href="/resources/css/style.css">
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<script type="text/javascript" src="/resources/js/app.js"></script>
-<title>Spring Boot</title>
-</head>
-<body>
-  <h1>Spring Boot - MVC web application example</h1>
+<template:page pageTitle="${pageTitle}">
+  <h1>Amcart App</h1>
   <hr>
 
   <div class="form">
@@ -26,5 +16,4 @@
     </form>
   </div>
 
-</body>
-</html>
+</template:page>
