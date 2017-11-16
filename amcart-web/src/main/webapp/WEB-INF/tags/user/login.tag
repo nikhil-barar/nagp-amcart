@@ -1,6 +1,7 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <div class="col-xs-12 col-sm-6 login">
-	<form action="login" class="validation-engine">
+	<form:form action="login" class="validation-engine"  method="post">
 		<h6>LOGIN</h6>
 		<div class="required form-group">
 			<p>User name or email adress *</p>
@@ -21,5 +22,7 @@
 		</p>
 		<input type="submit" name="login" class="btn btn-third-col"
 			value="LOGIN">
-	</form>
+	</form:form>
+	
+	
 </div>
