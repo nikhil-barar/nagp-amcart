@@ -2,6 +2,7 @@ package com.nagarro.amcart.models.product;
 
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -12,81 +13,83 @@ import com.nagarro.amcart.models.AbstractEntity;
 @Table(name = "categories")
 public class Category extends AbstractEntity {
 
-	private String code;
+    private String code;
 
-	private String name;
+    private String name;
 
-	private String description;
+    private String description;
 
-	@ManyToMany(mappedBy="categories")
-	private Collection<Product> products;
+    @ManyToMany(mappedBy = "categories",cascade= {CascadeType.MERGE})
+    private Collection<Product> products;
 
-	public Category(String code, String name, String description, Collection<Product> products) {
-		super();
-		this.code = code;
-		this.name = name;
-		this.description = description;
-		this.products = products;
-	}
+    public Category() {
+    }
 
-	/**
-	 * @return the code
-	 */
-	public String getCode() {
-		return code;
-	}
+    public Category(String code, String name, String description, Collection<Product> products) {
+        this.code = code;
+        this.name = name;
+        this.description = description;
+        this.products = products;
+    }
 
-	/**
-	 * @param code
-	 *            the code to set
-	 */
-	public void setCode(String code) {
-		this.code = code;
-	}
+    /**
+     * @return the code
+     */
+    public String getCode() {
+        return code;
+    }
 
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * @param code
+     *            the code to set
+     */
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	/**
-	 * @param name
-	 *            the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
+    /**
+     * @param name
+     *            the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * @param description
-	 *            the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
 
-	/**
-	 * @return the products
-	 */
-	public Collection<Product> getProducts() {
-		return products;
-	}
+    /**
+     * @param description
+     *            the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	/**
-	 * @param products
-	 *            the products to set
-	 */
-	public void setProducts(Collection<Product> products) {
-		this.products = products;
-	}
+    /**
+     * @return the products
+     */
+    public Collection<Product> getProducts() {
+        return products;
+    }
+
+    /**
+     * @param products
+     *            the products to set
+     */
+    public void setProducts(Collection<Product> products) {
+        this.products = products;
+    }
 
 }

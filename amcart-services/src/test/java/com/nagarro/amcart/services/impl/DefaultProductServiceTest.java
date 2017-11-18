@@ -42,8 +42,8 @@ public class DefaultProductServiceTest {
 	@Test
 	public void testFindByIdShouldReturnProduct() throws ModelNotFoundException {
 		Product product = mock(Product.class);
-		when(productDao.findOne(1)).thenReturn(product);
-		Product actualProduct = productService.findById(1);
+		when(productDao.findOne(1L)).thenReturn(product);
+		Product actualProduct = productService.findById(1L);
 
 		Assert.assertEquals(product, actualProduct);
 	}

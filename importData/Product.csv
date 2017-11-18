@@ -1,0 +1,3 @@
+name,description,stock.value,price.priceValue,price.currency,status,media[1].url,media[2].url,media[1].code,categories[1].code,categories[2].code
+Lacoste Cotton Shirt Slim Fit,Lacoste Cotton Shirt Slim Fit,100,200,INR,APPROVED,a1.com,a2.com,P1,Man,Woman
+Majestic Beecroft,Majestic Beecroft,1000,400,INR,APPROVED,b1.com,,P2,Woman,

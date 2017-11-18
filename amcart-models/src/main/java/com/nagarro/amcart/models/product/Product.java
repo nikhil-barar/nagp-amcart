@@ -31,7 +31,7 @@ public class Product extends AbstractEntity {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = false)
 	private Collection<Media> media;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = {CascadeType.MERGE})
 	@JoinTable(name = "products_categories", joinColumns = { @JoinColumn(name = "product_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "category_id") })
 	private Collection<Category> categories;

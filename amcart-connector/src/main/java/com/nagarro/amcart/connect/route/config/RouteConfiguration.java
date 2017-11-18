@@ -9,8 +9,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class RouteConfiguration {
 
     /** The input file directory. */
-    private String inputFileDirectory="file:///amcart/import";
-    private String processedFileDirectory="file:///amcart/processed";
+    private String inputFileDirectory = "file:///amcart/import";
+    private String processedFileDirectory = "file:///amcart/processed";
 
     /**
      * Gets the input file directory.
@@ -31,6 +31,21 @@ public class RouteConfiguration {
         this.inputFileDirectory = inputFileDirectory;
     }
 
+    /**
+     * Sets the processed file directory.
+     *
+     * @param processedFileDirectory
+     *            the new processed file directory
+     */
+    public void setProcessedFileDirectory(String processedFileDirectory) {
+        this.processedFileDirectory = processedFileDirectory;
+    }
+
+    /**
+     * Gets the processed file directory.
+     *
+     * @return the processed file directory
+     */
     public String getProcessedFileDirectory() {
         return processedFileDirectory;
     }

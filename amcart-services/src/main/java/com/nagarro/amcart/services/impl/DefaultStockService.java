@@ -22,7 +22,7 @@ public class DefaultStockService implements StockService {
 
 	@Override
 	@Transactional
-	public boolean updateStock(Integer productId, Long value) {
+	public boolean updateStock(Long productId, Long value) {
 		boolean isStockUpdated = false;
 		Product product = getProductDao().findOne(productId);
 		if (product != null) {
@@ -40,7 +40,7 @@ public class DefaultStockService implements StockService {
 	}
 
 	@Override
-	public boolean reserveStock(Integer productId, Long reservedValue) {
+	public boolean reserveStock(Long productId, Long reservedValue) {
 		boolean isStockReserved = false;
 		Product product = getProductDao().findOne(productId);
 		if (product != null) {

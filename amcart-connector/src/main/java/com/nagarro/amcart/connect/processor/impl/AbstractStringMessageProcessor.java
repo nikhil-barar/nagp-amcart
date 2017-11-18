@@ -1,5 +1,7 @@
 package com.nagarro.amcart.connect.processor.impl;
 
+import java.util.Objects;
+
 import com.nagarro.amcart.connect.util.JsonUtil;
 
 /**
@@ -24,9 +26,10 @@ public abstract class AbstractStringMessageProcessor<T> extends AbstractFileMess
     }
 
     @Override
-    protected void processStringMessage(String message) {
+    protected String processStringMessage(String message) {
         T object = JsonUtil.fromJson(message, classOfT);
-        processObject(object);
+        T processedObject = processObject(object);
+        return Objects.isNull(processedObject) ? message : JsonUtil.toJson(processedObject);
     }
 
     /**
@@ -34,6 +37,7 @@ public abstract class AbstractStringMessageProcessor<T> extends AbstractFileMess
      *
      * @param object
      *            the object
+     * @return the t
      */
-    protected abstract void processObject(T object);
+    protected abstract T processObject(T object);
 }

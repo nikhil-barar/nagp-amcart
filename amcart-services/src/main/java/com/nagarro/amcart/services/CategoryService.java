@@ -9,4 +9,6 @@ public interface CategoryService {
 	Category getCategoryByCode(String code);
 	
 	List<Category> getAllCategories();
+
+    Category saveOrUpdate(Category category);
 }

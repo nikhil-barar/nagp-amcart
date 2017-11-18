@@ -24,7 +24,7 @@ public class DefaultProductService implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public Product findById(Integer id) {
+    public Product findById(Long id) {
         Validate.notNull(id, "Parameter id cannot be null!");
         return productDao.findOne(id);
     }

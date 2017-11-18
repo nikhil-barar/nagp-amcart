@@ -19,7 +19,7 @@ import com.nagarro.amcart.models.product.Product;
  */
 @Repository
 @Component("productDao")
-public interface ProductDao extends JpaRepository<Product, Integer> {
+public interface ProductDao extends JpaRepository<Product, Long> {
 
 	/**
 	 * finds products using name

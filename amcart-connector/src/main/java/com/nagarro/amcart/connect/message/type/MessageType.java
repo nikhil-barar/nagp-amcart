@@ -6,7 +6,10 @@ package com.nagarro.amcart.connect.message.type;
 public enum MessageType {
 
     /** The product. */
-    PRODUCT("product");
+    PRODUCT("product"),
+    
+    /** The category. */
+    CATEGORY("category");
 
     /** The type. */
     private final String type;

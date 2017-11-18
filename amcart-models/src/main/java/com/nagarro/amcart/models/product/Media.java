@@ -14,6 +14,8 @@ public class Media extends AbstractEntity {
 
     private String url;
 
+    private String code;
+
     /**
      * Constructor
      */
@@ -42,4 +44,24 @@ public class Media extends AbstractEntity {
     public void setUrl(String value) {
         this.url = value;
     }
+
+    /**
+     * Gets the code.
+     *
+     * @return the code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    /**
+     * Sets the code.
+     *
+     * @param code
+     *            the new code
+     */
+    public void setCode(String code) {
+        this.code = code;
+    }
+
 }

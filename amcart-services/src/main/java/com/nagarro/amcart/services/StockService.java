@@ -4,10 +4,10 @@ import com.nagarro.amcart.models.product.Stock;
 
 public interface StockService {
 
-	boolean updateStock(Integer productId,Long value);
+	boolean updateStock(Long productId,Long value);
 	
 	boolean updateStock(Stock stock);
 
-	boolean reserveStock(Integer productId, Long reservedValue);
+	boolean reserveStock(Long productId, Long reservedValue);
 
 }

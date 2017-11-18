@@ -17,7 +17,7 @@ public interface ProductService {
      * @return Product
      * @throws ModelNotFoundException
      */
-    Product findById(Integer id);
+    Product findById(Long id);
 
     /**
      * finds products using id
