@@ -12,7 +12,7 @@
 <link href='font-face/helvetica.css' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/vendor/validation-engine.css">
-<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="fonts/simple-line-icons.css">
 <link rel="stylesheet" href="fonts/elegant-icons.css">
 <script src="js/modernizr-2.6.2.min.js"></script>
