@@ -1,0 +1,230 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family:Arial;
+	font-size: 100%;
+	vertical-align: baseline
+}
+html {
+	line-height: 1
+	font-family:Arial;
+}
+ol, ul {
+	list-style: none
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle
+}
+q, blockquote {
+	quotes: none
+}
+q:before, q:after, blockquote:before, blockquote:after {
+	content: "";
+	content: none
+}
+a img {
+	border: none
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display: block
+}
+li {
+	list-style: none
+}
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 0;
+	clear: both;
+	padding-top: 1px;
+	margin-top: -1px
+}
+body header {
+	height: 120px;
+	background-color: #111;
+	line-height: 120px;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 15px
+}
+body article {
+	background: transparent url('../images/coming-soon-bg.jpg') center center no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	min-height: 840px;
+	position: relative
+}
+body article .black {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background-color: rgba(6,6,6,0.84);
+	position: absolute;
+	left: 0;
+	top: 0
+}
+body article .container {
+	position: relative;
+	z-index: 1;
+	padding-top: 195px
+}
+body article .container h5 {
+	font-size: 42px;
+	text-align: center;
+	color: #fff;
+	margin-bottom: 25px
+}
+body article .container p {
+	font-size: 14px/22px;
+	color: #858c94;
+	max-width: 745px;
+	text-align: center;
+	margin: 0 auto;
+	word-spacing: -1.3px
+}
+body article .container .timer-wrapper {
+	margin-top: 52px;
+	text-align: center
+}
+body article .container .timer-wrapper .timer {
+	padding: 0 21px 0 20px;
+	display: inline-block
+}
+body article .container .timer-wrapper .timer>div input {
+	font-size: 50px;
+	color: #fff;
+	line-height:50px;
+}
+body article .container .timer-wrapper .timer .caption {
+	font-size: 20px;
+	color: #dedede;
+	text-transform: uppercase;
+	position: relative;
+	top: -23px
+}
+body article .container form {
+	text-align: center;
+	margin-top: 46px
+}
+@media all and (max-width: 612px) {
+body article .container form {
+	text-align: left
+}
+}
+body article .container form input {
+	position: relative;
+	left: -36px
+}
+@media all and (max-width: 642px) {
+body article .container form input {
+	left: 0;
+	width: 100% !important
+}
+}
+body article .container form input[name=email] {
+	font-size: 13px;
+	color: #111;
+	height: 46px;
+	width: 100%;
+	max-width: 378px;
+	border: 1px solid #dee0e3;
+	padding: 0 20px;
+	line-height: 44px
+}
+@media all and (max-width: 642px) {
+body article .container form input[name=email] {
+	max-width: 100%;
+	text-align: center
+}
+}
+body article .container form input[type=submit] {
+	width: 124px;
+	height: 46px;
+	background-color: #dccc99;
+	border: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #fff;
+	margin-left: 19px
+}
+@media all and (max-width: 642px) {
+body article .container form input[type=submit] {
+	padding: 0;
+	margin: 0
+}
+}
+body footer {
+	background-color: #111
+}
+body footer .container {
+	line-height: 78px;
+	padding: 0;
+	vertical-align: middle
+}
+body footer .container .copy {
+	color: #333;
+	font-size: 14px/78px;
+}
+@media all and (max-width: 440px) {
+body footer .container .copy {
+	text-align: center;
+	width: 100%;
+	float: none !important;
+	margin-bottom: -20px
+}
+}
+body footer .container .social {
+	color: #fff;
+	display: inline-block;
+	height: 30px;
+	line-height: 78px
+}
+@media all and (max-width: 440px) {
+body footer .container .social {
+	width: 100%;
+	text-align: center;
+	float: none !important
+}
+}
+.social li {
+	width: 30px;
+	height: 30px;
+	margin-left: 7px;
+	line-height: 30px;
+	vertical-align: middle
+}
+.social li.facebook {
+	background-color: #064ca1
+}
+.social li.twitter {
+	background-color: #27b9f2
+}
+.social li.google {
+	background-color: #da4735
+}
+ .social li.dribbble {
+	background-color: #f46899
+}
+.social li.instagram {
+	background-color: #306a92
+}
+.social li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-align: center
+}
+.social li a:hover{
+	text-decoration:none;
+}
