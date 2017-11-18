@@ -27,7 +27,7 @@ public class User extends AbstractEntity {
     @Column(name = "user_name")
     private String name;
 
-    @Column(name = "email_id")
+    @Column(name = "email_id", unique = true)
     private String emailId;
 
     @Column(name = "mobile_no")
@@ -49,8 +49,8 @@ public class User extends AbstractEntity {
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = Role.class)
-    @JoinTable(joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
     public User() {

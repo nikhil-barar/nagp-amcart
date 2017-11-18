@@ -1,3 +1,8 @@
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -74,10 +79,23 @@
 						<li class="btn-group"><a href="#" class="pm_item visible-xs">
 								<i class="icon-bag"></i> (2)
 						</a></li>
-						<li class="btn-group dropdown"><a href="#" class="pm_item"
-							data-toggle="dropdown" title="login"> <i class="icon-login"></i>
-								<span class="hidden-sm hidden-xs">Login</span>
-						</a>
+						
+						
+						<li class="btn-group dropdown">
+						
+						<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_CUSTOMER')">
+						<td><a href="<c:url value='/logout'/>" class="pm_item"
+									title="logout"> <i class="icon-logout"></i> <span
+										class="hidden-sm hidden-xs">Logout</span>
+								</a></td>
+						</sec:authorize>
+						
+						<sec:authorize access="!hasAnyRole('ROLE_ADMIN', 'ROLE_CUSTOMER')">
+								<td><a href="#" class="pm_item" data-toggle="dropdown"
+									title="login"> <i class="icon-login"></i> <span
+										class="hidden-sm hidden-xs">Login</span>
+								</a></td>
+							</sec:authorize>
 							<div class="dropdown-menu dropdown-menu-right" role="menu">
 								<span class="dropdown-triangle-up"></span> <a href="#"
 									class="dd-close-btn"><i class="icon_close"></i></a>
@@ -94,9 +112,9 @@
 											class="btn twitter-btn"><i class="social_twitter"></i>TWITTER</a>
 									</div>
 									<div id="dd_login">
-										<form action="/" method="post">
+										<form:form action="login" method="post">
 											<div class="required form-group">
-												<input type="text" name="email" placeholder="Email / Login"
+												<input type="text" name="username" placeholder="Email / Login"
 													class="placeholder-fix"> <i
 													class="icon_mail field-icon"></i>
 											</div>
@@ -111,7 +129,8 @@
 													me</label>
 											</div>
 											<div class="form-group text-center">
-												<button type="button" class="btn btn-sm btn-third-col">Login</button>
+												<input type="submit" name="login"
+													class="btn btn-sm btn-third-col" value="LOGIN">
 											</div>
 											<div class="text-center">
 												<a href="coming-soon.html" class="active">Foget your
@@ -119,9 +138,11 @@
 											</div>
 											<div class="dd-delimiter"></div>
 											<div class="form-group text-center">
-												<button type="button" class="btn btn-sm btn-sec-col">Register</button>
+												<a href="<c:url value='/login'/>">
+													<button type="button" class="btn btn-sm btn-sec-col">Register</button>
+												</a>
 											</div>
-										</form>
+										</form:form>
 									</div>
 								</div>
 							</div></li>

@@ -11,6 +11,7 @@
           <td>Enter Your name</td>
           <td><input id="name" name="name"></td>
           <td><input type="submit" value="Submit"></td>
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </tr>
       </table>
     </form>

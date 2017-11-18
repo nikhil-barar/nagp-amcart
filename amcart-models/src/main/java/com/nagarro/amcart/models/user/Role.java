@@ -1,6 +1,9 @@
 package com.nagarro.amcart.models.user;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.nagarro.amcart.models.AbstractEntity;
@@ -10,6 +13,9 @@ import com.nagarro.amcart.models.AbstractEntity;
 public class Role extends AbstractEntity {
 
     private String roleName;
+
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
     /**
      * This is default constructor
@@ -49,5 +55,13 @@ public class Role extends AbstractEntity {
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

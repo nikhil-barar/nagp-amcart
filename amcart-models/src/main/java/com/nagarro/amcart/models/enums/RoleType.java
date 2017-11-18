@@ -1,7 +1,7 @@
 package com.nagarro.amcart.models.enums;
 
 public enum RoleType {
-    ROLE_ADMIN("ROLE_ADMIN"), ROLE_CUSTOMER("ROLE_CUSTOMER");
+    ROLE_ADMIN("ROLE_ADMIN"), ROLE_CUSTOMER("ROLE_CUSTOMER"), ROLE_ANONYMOUS("ROLE_ANONYMOUS");
 
     private String name;
 

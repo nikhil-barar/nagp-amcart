@@ -13,6 +13,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.nagarro.amcart.daos.UserDao;
@@ -25,11 +26,16 @@ import com.nagarro.amcart.services.UserService;
 public class UserServiceImpl implements UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+    
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Override
     public User saveOrUpdate(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         LOGGER.info("Saving user with name : {} ", user.getName());
         return userDao.saveAndFlush(user);
     }
