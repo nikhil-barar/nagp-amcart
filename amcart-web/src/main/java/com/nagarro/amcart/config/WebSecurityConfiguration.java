@@ -1,6 +1,7 @@
 package com.nagarro.amcart.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,7 +18,14 @@ import com.nagarro.amcart.services.UserService;
 
 @Configuration
 @EnableWebSecurity
+@ConfigurationProperties(prefix = "amcart.security")
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+    
+    private String[] permittedUrls;
+    private String[] adminPermittedUrls;
+    private String loginUrl;
+    private String logoutUrl;
+    private String logoutSuccessUrl;
 
     @Autowired
     private UserService userService;
@@ -30,11 +38,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/resources/**", "/webjars/**", "/user/register/**", "/images/**", "/js/**",
-                        "/font-face/**", "/fonts/**", "/css/**")
-                .permitAll().antMatchers("/hello").hasAnyAuthority(RoleType.ROLE_ADMIN.getName(), RoleType.ROLE_CUSTOMER.getName())
-                .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
+                .antMatchers(permittedUrls).permitAll()
+                .antMatchers(adminPermittedUrls).hasAnyAuthority(RoleType.ROLE_ADMIN.getName())
+                .anyRequest().authenticated().and().formLogin().loginPage(loginUrl).permitAll().and().logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher(logoutUrl)).logoutSuccessUrl(logoutSuccessUrl);
     }
 
     @Override
@@ -47,9 +54,44 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return userService;
     }
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/*.css");
-        web.ignoring().antMatchers("/*.js");
+    public String[] getPermittedUrls() {
+        return permittedUrls;
     }
+
+    public void setPermittedUrls(String[] permittedUrls) {
+        this.permittedUrls = permittedUrls;
+    }
+
+    public String[] getAdminPermittedUrls() {
+        return adminPermittedUrls;
+    }
+
+    public void setAdminPermittedUrls(String[] adminPermittedUrls) {
+        this.adminPermittedUrls = adminPermittedUrls;
+    }
+
+    public String getLoginUrl() {
+        return loginUrl;
+    }
+
+    public void setLoginUrl(String loginUrl) {
+        this.loginUrl = loginUrl;
+    }
+
+    public String getLogoutUrl() {
+        return logoutUrl;
+    }
+
+    public void setLogoutUrl(String logoutUrl) {
+        this.logoutUrl = logoutUrl;
+    }
+
+    public String getLogoutSuccessUrl() {
+        return logoutSuccessUrl;
+    }
+
+    public void setLogoutSuccessUrl(String logoutSuccessUrl) {
+        this.logoutSuccessUrl = logoutSuccessUrl;
+    }
+    
 }
