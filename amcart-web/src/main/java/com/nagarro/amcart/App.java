@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -20,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = "com.nagarro.amcart.daos")
 @EntityScan(basePackages="com.nagarro.amcart.models")
 @ImportResource({ "classpath:platform-config.xml", "classpath:facades-config.xml" })
+@EnableElasticsearchRepositories(basePackages = "com.nagarro.amcart.search")
 public class App // NOSONAR
 {
     public static void main(String[] args) {

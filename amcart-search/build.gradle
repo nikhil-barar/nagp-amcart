@@ -21,16 +21,11 @@ repositories {
 		maven { url "http://repo.spring.io/milestone" }
 }
 
-
 dependencies {
-	compile group: 'org.springframework', name: 'spring-beans', version: '4.2.4.RELEASE'
-	compile group: 'org.springframework', name: 'spring-context', version: '4.2.4.RELEASE'
 	compile project(':amcart-models')
-	compile project(':amcart-services')
+	compile project(':amcart-daos')		
 	compile project(':amcart-platform')
-	compile project(':amcart-import')
-	compile project(':amcart-search')
-
 	
 	testCompile group: 'org.springframework', name: 'spring-test', version: '4.2.4.RELEASE'
 }
+

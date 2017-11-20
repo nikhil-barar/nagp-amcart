@@ -6,6 +6,7 @@ include 'amcart-web'
 include 'amcart-platform'
 include 'amcart-connector'
 include 'amcart-import'
+include 'amcart-search'
 
 
 rootProject.name = 'nagp-amcart-root'
